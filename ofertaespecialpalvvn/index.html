@@ -143,7 +143,7 @@
                 hasChanged: function() {
                     if (b.location.hash == "#no-back") {
                         b.location.hash = "#";
-                        b.location.href = "LINK"; //LINK PARA REDIRECIONAR AQUI
+                        b.location.href = "https://go.hotmart.com/Y87423733Q?ap=e08b&sck=ofertaespecialpalvvn"; //LINK PARA REDIRECIONAR AQUI
                     }
                 },
                 checkCompat: function() {
@@ -163,7 +163,7 @@
                             history.pushState(null, "", "#");
                         } else {
                             b.location.hash = "#";
-                            b.location.href = "LINK"; //LINK PARA REDIRECIONAR AQUI
+                            b.location.href = "https://go.hotmart.com/Y87423733Q?ap=e08b&sck=ofertaespecialpalvvn"; //LINK PARA REDIRECIONAR AQUI
                         }
                     }
                     a.checkCompat();
@@ -186,6 +186,34 @@
 </script>
 <!-- BACKREDIRECT !-->
 
+  <!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '875212340942336');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=875212340942336&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-DY9YKPBJ66"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-DY9YKPBJ66');
+</script>
+  
 </head>
 
 <body>
@@ -205,7 +233,7 @@
     <p>Y parece que esta vez fue usted!</p>
     <p>Por este motivo, ahora tendrá la oportunidad de adquirir <strong>el Protocolo Alivium más bonos con un descuento del 30%.</strong></p>
     <h1>De <span class="crossed">US$ 37</span> por <span class="new-price">US$ 27</span></h1>
-    <a class="btn alt mt-3" href="https://go.hotmart.com/H80569941X?ap=3717&sck=ofertaespecial">
+    <a class="btn alt mt-3" href="https://go.hotmart.com/B86756026B?ap=e08b&sck=ofertaespecial">
       ¡SÍ! QUIERO DESCUENTO
     </a>
     <br />
@@ -221,7 +249,7 @@
     <p>
      USE EL PROTOCOLO ALIVIUM AHORA Y RECUPERE LA SALUD DE SU CUERPO PARA VIVIR SIN DOLORES...
     </p>
-    <a class="btn mt-3" href="https://go.hotmart.com/H80569941X?ap=3717&sck=ofertaespecial">
+    <a class="btn mt-3" href="https://go.hotmart.com/B86756026B?ap=e08b&sck=ofertaespecial">
       ¡SÍ! ¡QUIERO ACCEDER AL PROTOCOLO AHORA MISMO!
     </a>
     <br /><br />
@@ -239,6 +267,77 @@
         });
     })(jQuery);
 </script>
-</body>
+  </body>
+
+  <!-- FIXADOR DE SRC !-->
+<script>
+    function parseQuery(qstr) {
+        var query = {};
+        var a = (qstr[0] === '?' ? qstr.substr(1) : qstr).split('&');
+        for (var i = 0; i < a.length; i++) {
+            var b = a[i].split('=');
+            query[decodeURIComponent(b[0])] = decodeURIComponent(b[1] || '');
+        }
+        return query;
+    }
+
+    function encodeQuery(obj) {
+        var str = [];
+        for (var p in obj)
+            if (obj.hasOwnProperty(p)) {
+                str.push(encodeURIComponent(p) + "=" + encodeURIComponent(obj[p]));
+            }
+        return str.join("&");
+    }
+
+    function addQueryParameterToDomain(key, value) {
+        var links = document.querySelectorAll('a[href]'),
+            linksLength = links.length,
+            index,
+            queryIndex,
+            queryString,
+            query,
+            url,
+            domain,
+            colonSlashSlash;
+
+        for (index = 0; index < linksLength; ++index) {
+            url = links[index].href,
+                queryIndex = url.indexOf('?'),
+                colonSlashSlash = url.indexOf('://');
+
+            domain = url.substring(colonSlashSlash + 3);
+            domain = domain.substring(0, domain.indexOf('/'));
+
+            if (queryIndex === -1) {
+                url += '?' + key + '=' + value;
+            } else {
+                queryString = url.substring(queryIndex);
+                url = url.substring(0, queryIndex);
+                query = parseQuery(queryString);
+
+                query[key] = value;
+
+                url += '?' + encodeQuery(query);
+            }
+
+            links[index].href = url;
+        }
+    }
+
+    function addQuery(item) {
+        var arr = item.split('=');
+        if(arr[0] != null && arr[1] != undefined) {
+                addQueryParameterToDomain(arr[0], arr[1]);
+        }
+    }
+
+    jQuery(function() {
+        var url = window.location.search.replace("?", "");
+        var itens = url.split('&');
+        itens.forEach(addQuery);
+    });
+</script>
+<!-- FIXADOR DE SRC !-->
 
 </html>
